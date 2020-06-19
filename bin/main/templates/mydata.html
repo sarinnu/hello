@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+  	 <tr th:object="${mydata}">
+  	    <a>ユーザー名</a>
+    	<td th:text="*{name}"></td>
+		<br>
+		<a>パスワード</a>
+	   <td th:text="*{password}"></td>
+		<br>
+		<a>メールアドレス</a>
+		<td th:text="*{mail}"></td>
+		<br>
+		<a>住所</a>
+		<td th:text="*{address}"></td>
+		<br>
+		<a>総購入金額</a>
+		<td th:text="*{total}"></td>
+     	<br>
+     	<a href="/myhestory">購入履歴</a>
+     	<br>
+     	<a>登録日時</a>
+		<td th:text="*{newDate}"></td>
+		<br>
+		<a>削除フラグ</a>
+	    <td th:text="*{deleteFlg}"></td>
+	</tr>
+	
+	<a href="/myupdate">登録情報の更新</a>
+	<a href="/mydelete">登録情報の削除</a>	
+</body>
+</html>

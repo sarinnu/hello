@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type"
+    content="text/html; "charset="UTF-8">
+    <title>登録完了</title>
+</head>
+<body>
+	<h1>変更完了しました</h1>
+	<p th:object="${user}">
+    <label>名前</label><br>
+	<span th:text="*{name}"></span><br>
+    <label>メール</label><br>
+    <span th:text="*{mail}"></span><br>
+    <label>住所</label><br>
+    <span th:text="*{address}"></span><br>
+    </p>
+    <br>
+    <a href="/top">トップに戻る</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type"
+    content="text/html; "charset="UTF-8">
+    <title>ログインページ</title>
+</head>
+<body>
+	<form action="/top" th:object="${userData}"　method="get">
+		<a>名前</a>
+		<input type="text" th:field="*{name}">
+		<br>
+		<a>パスワード</a>
+		<input type="password" th:field="*{password}" size=10 maxlength=8 >
+		<br>
+		<input type="submit" value="ログイン">
+	</form>
+	<br>
+	<a href="/Registration">新規登録</a>
+	<a href="/top">トップに戻る</a>
+</body>
+</html>

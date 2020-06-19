@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type"
+    content="text/html; "charset="UTF-8">
+    <title>登録の確認</title>
+</head>
+<body>
+	<h1>登録の確認</h1>
+	<div th:object="${userData}">
+	    <label>名前</label><br>
+	    <span th:text="*{name}"></span><br>
+	    <label>パスワード</label><br>
+	    <span th:text="*{password}"></span><br>
+	    <label>メール</label><br>
+	    <span th:text="*{mail}"></span><br>
+	    <label>住所</label><br>
+	    <span th:text="*{address}"></span><br>
+	 </div>
+	 <p>登録しますか？</p>
+	 <a href="/Registrarion_complete">はい</a>
+	 <a href="/top">いいえ</a>
+</body>
+</html>

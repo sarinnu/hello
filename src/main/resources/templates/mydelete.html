@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type"
+    content="text/html; "charset="UTF-8">
+    <title>登録の確認</title>
+</head>
+<body>
+	<h1>登録の確認</h1>
+	<div th:object="${user}">
+		<label>ユーザーID</label><br>
+	    <span th:text="*{userID}"></span><br>
+	    <label>名前</label><br>
+	    <span th:text="*{name}"></span><br>
+	    <label>パスワード</label><br>
+	    <span th:text="*{password}"></span><br>
+	    <label>メール</label><br>
+	    <span th:text="*{mail}"></span><br>
+	    <label>住所</label><br>
+	    <span th:text="*{address}"></span><br>
+	    <label>合計購入額</label>
+	    <span th:text="*{total}"></span><br>
+	    <label>登録日時</label>
+	    <span th:text="*{newDate}"></span><br>
+	    <label>削除フラグ</label>
+	    <span th:text="*{deleteFlg}"></span><br>
+	 </div>
+	　<p>このユーザーをまじで削除しますか？</p>
+	 <a href="/mydelete_result">はい</a>
+	 <a href="/top">いいえ</a>
+</body>
+</html>

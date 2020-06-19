@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type"
+    content="text/html; "charset="UTF-8">
+    <title>STSでHello World</title>
+</head>
+<body>
+    <h1>ECサイトトップ</h1><br>
+    <h2>『金銭取引が絶対に発生しない』『いくらでも、どんなものでも購入できる(気分になれる)』『ECサイト』です。</h2>
+    <h3 th:href="@{${mydata}}" th:text="${name}"></h3>
+    <a th:href="@{${mydata}}" th:text="マイページ"></a>
+    <a th:href="${cart}" th:text="買い物かご"></a>
+    
+    <br>
+    <form action="Search" method="get">
+    	<a>検索キーワード</a>
+    	<input type="text" name="item"><br>
+    	<input type="submit" value="検索"><br>
+    	<input type="hidden" value="ac">
+    </form>
+    <p th:text="${null}"></p>
+    <a th:href="@{${login}}">ログイン</a>
+    <a th:href="@{${logout}}">ログアウト</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type"
+    content="text/html; "charset="UTF-8">
+    <title>購入履歴</title>
+</head>
+<body>
+	<h1>購入履歴</h1>
+	<h2 th:text="${name}"></h2>
+	<table th:inline="text" th:each="pdb: ${pdbList}">
+		 <tr>
+		 <td rowspan="2"><img th:src=${pdb.imageURL}></td>
+		 <td>
+		 <a>[[${pdb.productName}]]</a>
+		 </td>
+		 </tr>
+		 <tr>
+		 <td th:text="'￥'+${pdb.price}"></td>
+		 </tr>
+		 <p>-----------------------------------------</p>
+	</table>
+	<a href="/top">トップに戻る</a>
+</body>
+</html>

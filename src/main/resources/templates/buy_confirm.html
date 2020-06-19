@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p th:text="${user}"></p>
+カート
+  <table th:each="data: ${datas}">
+		 <tr>
+		 <td rowspan="2"><img th:src=${data.imageURL}></td>
+		 <td>
+		 <a th:href="@{${data.itemURL}}">[[${data.productName}]]</a>
+		 </td>
+		 </tr>
+		 <tr>
+		 <td>[[${data.price}]]</td>
+		 <td>
+		 <a th:href="'/cartDelete?index='+${data.index}">削除</a>
+		 <!--  
+		 <form action="/cartDelete" th:object="${data}" method="get">
+		 	<input type="submit" value="削除">
+		　</form>
+		-->
+		 </td>
+		 </tr>
+	</table>
+	<p>-----------------------------------------------------------</p>
+	<tr>
+		<td>合計金額：</td>
+		<td th:text="${total}+'円'"></td>
+	</tr>
+	<br>
+	<form action="/buy_complete" method="get">
+		<a>発送方法</a>
+		<br>
+		<a>自宅
+		<input type="radio" name="type" value="1" checked>
+		</a>
+		<a>コンビニ
+		<input type="radio" name="type" value="2">
+		</a>
+		<br>
+		<input type="submit" value="上記の内容で購入する">
+	</form>
+	<!--
+	<a href="/buy_complete">購入する</a>
+	-->
+	<br>	
+	<a href="/top">トップに戻る</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  	<tr th:object="${pdb}">
+		<td th:text="*{productName}"></td>
+		<br>
+		<td th:text="'￥'+*{price}"></td>
+		<br>
+		<td><img th:src="*{imageURL}"></td>
+		<br>
+		<td th:text="*{availability}"></td>
+		<br>
+		<td th:text="*{rating}"></td>
+		<br>
+		<td th:text="*{description}"></td>
+	</tr>
+
+	
+	<a th:href="@{${add}}">カートへ追加</a>
+	
+</body>
+</html>
