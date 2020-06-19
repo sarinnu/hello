@@ -81,7 +81,7 @@ public class Search {
 			        }else {
 			        	availability="在庫切れ";
 			        }
-			        //を格納するBeansのインスタンスを生成
+			     
 			        ProductDataBeans pdb = new ProductDataBeans();
 			        pdb.setImageURL(imageURL);
 			        pdb.setProductName(productName);
