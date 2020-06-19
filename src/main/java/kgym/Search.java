@@ -57,14 +57,14 @@ public class Search {
     		JsonNode root=mapper.readTree(json);
     		
     		
-    		  //¤•iŒŸõŒ‹‰Ê‚Ì“ü‚Á‚½Beans‚ğŠi”[‚·‚éArrayList‚ğ¶¬
+    		  //Beans‚ğŠi”[‚·‚éArrayList‚ğ¶¬
             ArrayList<ProductDataBeans> pdbList = new ArrayList<ProductDataBeans>();
             
             int SearchResultNum = root.get("ResultSet").get("totalResultsAvailable").asInt();
             model.addAttribute("results",SearchResultNum);
 
 			  //JSON‚©‚ç10Œ•ª‚Ì—v‘f‚ğæ‚èo‚µAStringŒ^‚ÉŠi”[
-			  //‚»‚ê‚ğBeans‚ÉƒZƒbƒg‚µABeans‚ğArrayList‚ÉŠi”[
+			  //UserDataBeans‚ÉƒZƒbƒg‚µABeans‚ğArrayList‚ÉŠi”[
 			  for(int i = 0; i <= 19; i++) {
 			        String hitNum = String.valueOf(i);
 			        String imageURL =root.get("ResultSet").get("0").get("Result").get(hitNum).get("Image").get("Medium").textValue();
@@ -81,7 +81,7 @@ public class Search {
 			        }else {
 			        	availability="İŒÉØ‚ê";
 			        }
-			        //¤•iŒŸõŒ‹‰Ê‚ğŠi”[‚·‚éBeans‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬
+			        //‚ğŠi”[‚·‚éBeans‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬
 			        ProductDataBeans pdb = new ProductDataBeans();
 			        pdb.setImageURL(imageURL);
 			        pdb.setProductName(productName);
