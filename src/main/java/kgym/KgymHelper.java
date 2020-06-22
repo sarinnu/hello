@@ -8,7 +8,6 @@ import java.util.ArrayList;
  */
 public class KgymHelper {
 
-    //トップへのリンクを定数として設�?
     private String homeURL = "/login";
 
     public static KgymHelper getInstance(){
@@ -33,7 +32,7 @@ public class KgymHelper {
                     output += "名前";
                 }
                 if(val.equals("password")){
-                    output +="パスワー�?";
+                    output +="パスワード?";
                 }
                 if(val.equals("mail")){
                     output +="メール";
@@ -41,7 +40,7 @@ public class KgymHelper {
                 if(val.equals("address")){
                     output +="住所";
                 }
-                output +="が未記�?�で�?<br>";
+                output +="が未入力です";
             }
         return output;
     }

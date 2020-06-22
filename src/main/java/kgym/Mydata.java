@@ -19,11 +19,10 @@ public class Mydata {
 
     @RequestMapping(value="/mydata",method=RequestMethod.GET)
     public String mydata(HttpSession session,Model model) {
-//		セッションからユーザーデータを取り出す
+
     	String name=session.getAttribute("user").toString();
     	UserData data =(UserData)session.getAttribute(name);
     	
-//		MySQLに接続しユーザーデータを取得
     	Connection con = null;
         PreparedStatement st = null;
         try{

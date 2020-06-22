@@ -17,13 +17,12 @@ public class Mydelete_result{
 
    @RequestMapping(value = "/mydelete_result",method=RequestMethod.GET)
    public String registrarion_complete(HttpSession session,Model model)  {
-//	      セッションからユーザーデータを取得
+
 	   String name =session.getAttribute("user").toString();
 	   UserData data=(UserData)session.getAttribute(name);
 	   UserDataDTO userdata = new UserDataDTO();
        data.UD2DTOMapping(userdata);
 
-//	   MySQLに接続しDBからユーザーデータを削除
        try {
     	   UserDataDTO user=UserDataDAO.getInstance().search(userdata);
     	   UserDataDAO.getInstance().delete(user);
@@ -32,7 +31,6 @@ public class Mydelete_result{
     	   return "error";
        }
 
-//	   セッションからユーザーデータを削除
 	   session.removeAttribute(name);
 
 	   return "mydelete_result";

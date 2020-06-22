@@ -13,7 +13,7 @@ public class Registrarion_complete{
 
    @RequestMapping(value = "/Registrarion_complete",method=RequestMethod.GET)
    public String registrarion_complete(HttpSession session,Model model) throws Exception {
-//		セッションからユーザーデータを取得したものを新規のUserDataインスタンスに格納
+
 	   UserData user=new UserData();
 	   user.setName(session.getAttribute("name").toString());
 	   user.setPassword(session.getAttribute("password").toString());
@@ -21,12 +21,10 @@ public class Registrarion_complete{
 	   user.setAddress(session.getAttribute("address").toString());
 	   model.addAttribute("user",user);
 	   
-//	   DBへデータの挿入
 	   UserDataDTO userdata = new UserDataDTO();
        user.UD2DTOMapping(userdata);
        UserDataDAO.getInstance().insert(userdata);
 
-//     セッションにある送信データを削除
 	   session.removeAttribute("name");
 	   session.removeAttribute("password");
 	   session.removeAttribute("mail");

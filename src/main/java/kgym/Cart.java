@@ -15,12 +15,10 @@ public class Cart{
 	@RequestMapping(value="/cart",method=RequestMethod.GET)
 	public String cart(HttpSession session,Model model) {
 		
-//		ƒZƒbƒVƒ‡ƒ“‚©‚çƒ†[ƒU[ƒf[ƒ^‚ğæ‚èo‚·
 		String user=session.getAttribute("user").toString();
 	    UserData data=(UserData)session.getAttribute(user);
 	    ArrayList<ProductDataBeans> items=data.getItem();
 	    
-//	 	ƒ†[ƒU[‚ÌƒJ[ƒgƒf[ƒ^‚©‚ç¤•iƒf[ƒ^‚ğæ‚èo‚·
 	    int i=0;
 	    int total=0;
 	    for(ProductDataBeans item:items) {
@@ -30,13 +28,11 @@ public class Cart{
 	    	i++;
 	    }
 
-//		ƒ†[ƒU[ƒf[ƒ^‚ÌXV
 	    data.setItem(items);
 	    data.setCartTotal(total);
 	    session.setAttribute(user,data);
-    
-//		HTML‚ÉƒJ[ƒgƒf[ƒ^‚ğ‘—M	    
-	    model.addAttribute("user", user+"—l");
+        
+	    model.addAttribute("user", user+"æ§˜");
 		model.addAttribute("datas",data.getItem());
 		model.addAttribute("total",data.getCartTotal());
 		

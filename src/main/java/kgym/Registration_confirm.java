@@ -22,12 +22,12 @@ public class Registration_confirm{
 		   for(String chk:data.chkproperties()) {
 			   list+=chk;
 		   }
-		   list+="入力してください";
+		   list+="蜈･蜉帙＠縺ｦ縺上□縺輔＞";
 		   System.out.println(list);
 		   model.addAttribute("chk",list);
 		   return "Registration";
 	   }
-//	   セッションに送信データを格納
+
 	   session.setAttribute("name",data.getName());
 	   session.setAttribute("password",data.getPassword());
 	   session.setAttribute("mail",data.getMail());

@@ -16,16 +16,13 @@ public class Myupdate_result{
 
    @RequestMapping(value = "/myupdate_result",method=RequestMethod.POST)
    public String myupdate_result(HttpSession session,@ModelAttribute UserData user,Model model) throws Exception {
-//	   セッションからユーザーデータを取得
+
 	   model.addAttribute("user",user);
 	   UserDataDTO userdata = new UserDataDTO();
        user.UD2DTOMapping(userdata);
-
-//	   DBへデータの挿入
+       
        UserDataDAO .getInstance().update(userdata,session.getAttribute("user").toString());
-
-//	   セッションに変更済みのユーザデータを設置
-	   session.setAttribute(user.getName(),user);
+       session.setAttribute(user.getName(),user);
 
 	   return "myupdate_result";
    }

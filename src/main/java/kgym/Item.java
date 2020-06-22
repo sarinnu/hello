@@ -20,7 +20,7 @@ public class Item{
 	
    @RequestMapping(value = "/Item", method = RequestMethod.GET)
    public String item(HttpSession session,@RequestParam("code") String code,Model model) {
-//	  　　セッションにある検索結果のデータから商品データを取り出す
+
 	   model.addAttribute("pdb", (ProductDataBeans)session.getAttribute(code));
 	   model.addAttribute("add", "/add?code="+code);
 	   return "item";

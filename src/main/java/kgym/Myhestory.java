@@ -28,11 +28,10 @@ public class Myhestory{
 	
    @RequestMapping(value = "/myhestory", method = RequestMethod.GET)
    public String myhestory(HttpSession session,Model model) {
-//	   sessionからユーザーデータを取得
+
 	   String name=session.getAttribute("user").toString();
    	   UserData data =(UserData)session.getAttribute(name);
    	   
-//		MySQLに接続しユーザーデータを取得
 	   	Connection con = null;
 	    PreparedStatement st = null;
 	    try{
@@ -51,7 +50,6 @@ public class Myhestory{
 	        
             ArrayList<ProductDataBeans> pdbList = new ArrayList<ProductDataBeans>();
 
-//		    商品コードでAPIから商品情報を取得
 	        while (rs.next()) {
 	        	  String str = rs.getString("itemCode");
 	  	   		  String url="https://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemLookup?appid=dj00aiZpPVF2NnkxbWpIeTBPQSZzPWNvbnN1bWVyc2VjcmV0Jng9ZmU-&itemcode="+str;
@@ -86,7 +84,6 @@ public class Myhestory{
 	       
 		        con.close();
 		        
-//				商品情報をHTMLに送信
 		        model.addAttribute("pdbList",pdbList);
 		        model.addAttribute("name",name);
 		        return "myhestory";

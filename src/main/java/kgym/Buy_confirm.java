@@ -13,12 +13,10 @@ public class Buy_confirm{
 	@RequestMapping(value="/buy_confirm",method=RequestMethod.GET)
 	public String buy_confirm(HttpSession session,Model model) {
 	
-//      ƒZƒbƒVƒ‡ƒ“‚©‚çƒ†[ƒU[ƒf[ƒ^‚ğæ‚èo‚·
 		String user=session.getAttribute("user").toString();
 	    UserData data=(UserData)session.getAttribute(user);
 	    
-//      HTML‚Éƒ†[ƒU[–¼‚ÆƒJ[ƒgƒf[ƒ^‚ğ‘—M
-	    model.addAttribute("user", user+"—l");
+        model.addAttribute("user", user+"ï¿½l");
 		model.addAttribute("datas",data.getItem());
 		model.addAttribute("total",data.getCartTotal());
 

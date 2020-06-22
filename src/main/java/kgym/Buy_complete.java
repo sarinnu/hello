@@ -25,12 +25,12 @@ public class Buy_complete{
 
    @RequestMapping(value = "/buy_complete",method=RequestMethod.GET)
    public String buy_complete(HttpSession session,@RequestParam("type") int type,Model model) throws Exception {
-//	   セッションからユーザーデータを取り出す
+
 	   String name=session.getAttribute("user").toString();
 	   UserData data=(UserData)session.getAttribute(name);
 	   ArrayList<ProductDataBeans> items=data.getItem();
 	   
-//		MySQLに接続しbuy_tとuser_tを編集
+
 	   Connection con = null;
        PreparedStatement st = null;
        for(ProductDataBeans item:items) {
@@ -60,7 +60,7 @@ public class Buy_complete{
 	           st.setInt(2, rs.getInt(1));
 	           st.executeUpdate();
 	       }catch(SQLException e){
-	           System.out.println(e.getMessage());
+	    	   System.out.println(e.getMessage());
 	           throw new SQLException(e);
 	       }finally{
 	           if(con != null){
@@ -69,11 +69,9 @@ public class Buy_complete{
 	       }
        }
        
-//	   購入額をHTMLに送信
        model.addAttribute("total", data.getCartTotal());
        
-//		ユーザーデータのカート情報をリセット・更新
-       data.setItem(null);
+	   data.setItem(null);
        data.setCartTotal(0);
        session.setAttribute(name,data);
 	   return "buy_complete";

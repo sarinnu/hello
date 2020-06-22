@@ -10,7 +10,7 @@ public class MyUpdate {
 
     @RequestMapping(value="/myupdate",method=RequestMethod.GET)
     public String myupdate(Model model) {   	
-//		更新用のUserDataインスタンスをHTMLに送信
+
     	model.addAttribute("userdata",new UserData());
     	return "myupdate";
     }

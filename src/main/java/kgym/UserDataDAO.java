@@ -24,7 +24,7 @@ public class UserDataDAO {
             con = DBManager.getConnection();
             st =  con.prepareStatement("INSERT INTO user_t(name,password,mail,address,newDate) VALUES(?,?,?,?,?)");
             st.setString(1, ud.getName());
-            st.setString(2, ud.getPassword());//謖�螳壹�ｮ繧ｿ繧､繝�繧ｹ繧ｿ繝ｳ繝怜�､縺九ｉSQL譬ｼ邏咲畑縺ｮDATE蝙九↓螟画峩
+            st.setString(2, ud.getPassword());
             st.setString(3, ud.getMail());
             st.setString(4, ud.getAddress());
             st.setTimestamp(5, new Timestamp(System.currentTimeMillis()));

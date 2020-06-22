@@ -12,7 +12,7 @@ public class Logout {
 
     @RequestMapping(value="/logout",method=RequestMethod.GET)
     public String login(Model model,HttpSession session) {
-//      セッションからログイン中のユーザーのデータを削除
+
     	session.removeAttribute("user");
     	return "logout";
     }

@@ -14,11 +14,11 @@ public class Mydelete {
 
     @RequestMapping(value="/mydelete",method=RequestMethod.GET)
     public String mydelete(Model model,HttpSession session) {
-//		セッションからユーザーデータを取得
+
     	String name=session.getAttribute("user").toString();
     	UserData data=(UserData)session.getAttribute(name);
     	
-//		削除用のUserDataインスタンスをHTMLに送信
+
     	UserDataDTO UDD=new UserDataDTO();
 		UDD.setName(data.getName());
 		UDD.setPassword(data.getPassword());

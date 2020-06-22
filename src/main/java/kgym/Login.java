@@ -10,11 +10,10 @@ public class Login {
 
     @RequestMapping(value="/login",method=RequestMethod.GET)
     public String login(Model model) {
-//      HTMLにトップページのリンクを送信
+
     	KgymHelper kgym=KgymHelper.getInstance();
     	String home=kgym.home();
     	model.addAttribute("home",home);
-//		ログイン用にUserDataの新規インスタンスをHTMLに送信
     	model.addAttribute("userData", new UserData());
     	return "login";
     }

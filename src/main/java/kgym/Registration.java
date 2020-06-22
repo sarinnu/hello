@@ -11,7 +11,7 @@ public class Registration{
 	
    @RequestMapping(value = "/Registration", method = RequestMethod.GET)
    public String registration(Model model) {
-       model.addAttribute("userData", new UserData()); // 検索フォーム用インスタンス
+       model.addAttribute("userData", new UserData()); 
        return "registration";
 
    }

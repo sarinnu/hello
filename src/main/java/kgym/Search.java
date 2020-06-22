@@ -27,12 +27,12 @@ public class Search {
     	model.addAttribute("home",home);
     	
     	if(session.getAttribute("user")==null) {
-    		model.addAttribute("null", "ログインしてください");
+    		model.addAttribute("null", "繝ｭ繧ｰ繧､繝ｳ縺励※縺�縺ｾ縺帙ｓ");
     		return "redirect:top";
     	}
     	
     	if(item.equals("")) {
-    		model.addAttribute("null","入力してください");
+    		model.addAttribute("null","蜈･蜉帙＠縺ｦ縺上□縺輔＞");
     		return "redirect:top";
     	}
     			
@@ -56,15 +56,11 @@ public class Search {
     		ObjectMapper mapper =new ObjectMapper();
     		JsonNode root=mapper.readTree(json);
     		
-    		
-    		  //Beansを格納するArrayListを生成
             ArrayList<ProductDataBeans> pdbList = new ArrayList<ProductDataBeans>();
             
             int SearchResultNum = root.get("ResultSet").get("totalResultsAvailable").asInt();
             model.addAttribute("results",SearchResultNum);
 
-			  //JSONから10件分の要素を取り出し、String型に格納
-			  //UserDataBeansにセットし、BeansをArrayListに格納
 			  for(int i = 0; i <= 19; i++) {
 			        String hitNum = String.valueOf(i);
 			        String imageURL =root.get("ResultSet").get("0").get("Result").get(hitNum).get("Image").get("Medium").textValue();
@@ -77,9 +73,9 @@ public class Search {
 					String description=root.get("ResultSet").get("0").get("Result").get(hitNum).get("Description").textValue();
 			        String availability=root.get("ResultSet").get("0").get("Result").get(hitNum).get("Availability").textValue();
 			        if(availability.equals("instock")) {
-			        	availability="購入可能";
+			        	availability="雉ｼ蜈･蜿ｯ閭ｽ";
 			        }else {
-			        	availability="在庫切れ";
+			        	availability="雉ｼ蜈･縺ｧ縺阪∪縺帙ｓ";
 			        }
 			     
 			        ProductDataBeans pdb = new ProductDataBeans();
@@ -103,7 +99,6 @@ public class Search {
 			        pdbList.add(pdb);
 			   }
 			
-			  //ArrayListをリクエストスコープに格納
 			model.addAttribute("resultData", pdbList);
 			model.addAttribute("keyword", item);
 			

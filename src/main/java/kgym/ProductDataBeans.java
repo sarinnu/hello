@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-// 商品情報を格納するデータビーンズ
 @RequiredArgsConstructor
 @Getter
 @Setter

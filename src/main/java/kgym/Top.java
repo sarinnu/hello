@@ -18,8 +18,6 @@ public class Top {
     @RequestMapping(value="/top",method=RequestMethod.GET)
     public String top(HttpSession session,HttpServletResponse hsr,@ModelAttribute UserData data,Model model) {
     	
-    		System.out.println("update");
-    		// ƒZƒbƒVƒ‡ƒ“‚ğ—p‚¢‚½ƒƒOƒCƒ“ƒ`ƒFƒbƒN
     		if(session.getAttribute("user")==null) {
 	    		UserDataDTO UDD=new UserDataDTO();
 	    		UDD.setName(data.getName());
@@ -31,7 +29,7 @@ public class Top {
 	    			if(user.getName()!=null) {
 	    				session.setAttribute("user", data.getName());
 	    				session.setAttribute(data.getName(), data);
-	    				model.addAttribute("name","‚æ‚¤‚±‚»I"+user.getName()+"—lIII");
+	    				model.addAttribute("name","	ã‚ˆã†ã“ãï¼ï¼"+user.getName()+"æ§˜ï¼ï¼ï¼ï¼");
 	    				model.addAttribute("mydata", "/mydata");
 	    				model.addAttribute("cart","/cart");
 	    				
@@ -45,7 +43,7 @@ public class Top {
 	    		}
     		}else {
     			String name=session.getAttribute("user").toString();
-    			model.addAttribute("name","‚æ‚¤‚±‚»I"+name+"—lIII");
+    			model.addAttribute("name","ã‚ˆã†ã“ãï¼ï¼"+name+"æ§˜ï¼ï¼ï¼ï¼");
     			
     		}
     		model.addAttribute("null", model.getAttribute("null"));

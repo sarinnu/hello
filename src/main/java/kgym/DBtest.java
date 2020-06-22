@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//MySQL‚Ö‚ÌÚ‘±ƒeƒXƒg
+
 public class DBtest {
     public static Connection getConnection(){
         Connection con=null;
