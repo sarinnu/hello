@@ -36,7 +36,12 @@ dependencies {
 	testCompile group: 'com.github.springtestdbunit', name: 'spring-test-dbunit', version: '1.3.0'
 	testCompile group: 'org.dbunit', name: 'dbunit', version: '2.6.0'
 	
+<<<<<<< HEAD
 //	compile("org.springframework.boot:spring-boot-starter-jetty")
+=======
+	//classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
+	//compile("org.springframework.boot:spring-boot-starter-jetty")
+>>>>>>> branch 'master' of https://github.com/sarinnu/hello.git
 }
 
 

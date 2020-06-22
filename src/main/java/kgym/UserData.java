@@ -25,7 +25,7 @@ public class UserData{
     private ArrayList<ProductDataBeans> item=new ArrayList<ProductDataBeans>();
     private int cartTotal;
     
-//  入力チェック用のリスト
+
     public ArrayList<String> chkproperties(){
         ArrayList<String> chkList = new ArrayList<String>();
         if(this.name.equals("")){
