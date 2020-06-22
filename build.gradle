@@ -38,6 +38,10 @@ dependencies {
 	testCompile group: 'com.github.springtestdbunit', name: 'spring-test-dbunit', version: '1.3.0'
 	testCompile group: 'org.dbunit', name: 'dbunit', version: '2.6.0'
 	
+	compileJava { 
+      options.encoding = "UTF-8" 
+    }
+	
 //<<<<<<< HEAD
 //	compile("org.springframework.boot:spring-boot-starter-jetty")
 //=======
