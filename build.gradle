@@ -4,7 +4,9 @@ plugins {
 	id 'java'
 }
 
-defaultTasks "clean", "build"
+//defaultTasks "clean", "build"
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
