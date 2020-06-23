@@ -12,7 +12,7 @@ public class DBManager {
         Connection con=null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/kagoyume_db?characterEncoding=UTF-8&serverTimezone=JST","root","");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3308/kagoyume_db?characterEncoding=UTF-8&serverTimezone=JST","root","");
             System.out.println("DBConnected!!");
             return con;
         }catch(ClassNotFoundException e){
