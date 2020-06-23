@@ -41,8 +41,6 @@ public class Buy_complete{
 	           st.setString(2,data.getPassword());
 	           ResultSet rs = st.executeQuery();
 	           rs.next();
-	    	   System.out.println(data.getCartTotal());
-
 	           
 	           st =  con.prepareStatement("INSERT INTO buy_t(userID,itemCode,type,buyDate) VALUES(?,?,?,?)");
 	           st.setInt(1, rs.getInt(1));
@@ -50,12 +48,10 @@ public class Buy_complete{
 	           st.setInt(3, type);
 	           st.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
 	           st.executeUpdate();
-	    	   System.out.println(data.getCartTotal());
 
 	           st =  con.prepareStatement("update user_t set total = ? where userID = ?");
 	           int total=rs.getInt(6);
 	           total+=data.getCartTotal();
-	           System.out.println(rs.getInt(6));
 	           st.setInt(1, total);
 	           st.setInt(2, rs.getInt(1));
 	           st.executeUpdate();

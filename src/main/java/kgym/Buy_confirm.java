@@ -16,7 +16,7 @@ public class Buy_confirm{
 		String user=session.getAttribute("user").toString();
 	    UserData data=(UserData)session.getAttribute(user);
 	    
-        model.addAttribute("user", user+"�l");
+        model.addAttribute("user", user+"様");
 		model.addAttribute("datas",data.getItem());
 		model.addAttribute("total",data.getCartTotal());
 

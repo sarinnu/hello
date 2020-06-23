@@ -39,6 +39,7 @@ public class Top {
 	    			}
 	    		}catch(SQLException e) {
 	    			System.out.println(e.getMessage());
+	    			model.addAttribute("error", e.getMessage());
 	    			return "/error";
 	    		}
     		}else {

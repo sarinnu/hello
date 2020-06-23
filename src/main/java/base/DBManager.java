@@ -12,16 +12,17 @@ public class DBManager {
         Connection con=null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3308/kagoyume_db?characterEncoding=UTF-8&serverTimezone=JST","root","");
+             con=DriverManager.getConnection("jdbc:mysql://localhost:3308/kagoyume_db?characterEncoding=UTF-8&serverTimezone=JST","root","");
+//            con=DriverManager.getConnection("mysql://root:48487845@localhost:3306/kagoyume_db?reconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8&serverTimezone=JST");
             System.out.println("DBConnected!!");
             return con;
         }catch(ClassNotFoundException e){
+        	System.out.println("class"+e.getMessage());
            throw new IllegalMonitorStateException();
-//        	 System.out.println(e.getMessage());
-//        	 return con;
+ //        	 return con;
         } catch (SQLException e) {
+       	    System.out.println("SQL"+e.getMessage());
             throw new IllegalMonitorStateException();
-//        	 System.out.println(e.getMessage());
 //        	 return con;
         }
     }
